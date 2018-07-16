@@ -1,0 +1,20 @@
+{
+    "name": "felixble/dataset-seeder",
+    "description": "DataSetSeeder Module",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Felix Blechschmitt",
+            "email": "f.blechschmitt@hiorg-server.de"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Codeception\\Module\\": "src"
+        }
+    },
+    "license": "MIT"
+}
