@@ -1,6 +1,6 @@
 {
     "name": "felixble/dataset-seeder",
-    "description": "DataSetSeeder Module",
+    "description": "DataSetSeeder Module for codeception tests",
     "version": "1.0.0",
     "authors": [
         {
