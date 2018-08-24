@@ -26,7 +26,7 @@ class DataSetSeeder extends Module {
      * @param $dataSetArray
      * @throws \Codeception\Exception\ModuleException
      */
-    public function seedDatabase($dataSetArray) {
+    public function seedDatabase($dataSetArray, $clearTablesFirst = true) {
         /** @var Db $dbModule */
         $dbModule = $this->getModule('Db');
 
@@ -34,6 +34,13 @@ class DataSetSeeder extends Module {
         $dbh = $dbModule->dbh;
 
         foreach ($dataSetArray as $table => $rows) {
+            if ($clearTablesFirst) {
+                $delQuery = "DELETE FROM $table";
+                $this->debugSection('Delete query', $delQuery);
+                $deleteSth = $dbh->query($delQuery);
+                $deleteSth->execute();
+            }
+            
             foreach ($rows as $row) {
                 $keys = [];
                 $values = [];
